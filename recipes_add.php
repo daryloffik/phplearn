@@ -14,10 +14,10 @@
 <body class="d-flex flex-column min-vh-100">
     <div class="container">
         <?php require_once(__DIR__ . '/headerclassroom.php'); ?>
-        <h1>Contactez nous</h1>
+        <h1>Entrer recette</h1>
         <form action="submit_recipe.php" method="POST" >
             <div class="mb-3">
-                <label for="title" class="form-label">Email</label>
+                <label for="title" class="form-label">Nom de la recette</label>
                 <input type="text" class="form-control" id="title" name="title" aria-describedby="title-help">
                
             </div>
@@ -27,9 +27,10 @@
             </div>
             <div class="mb-3">
             <label for="author" class="form-label">Votre nom</label>
-                <input type="text" class="form-control" id="author" name="author" aria-describedby="author-help">
-               
+                <input type="email" class="form-control" id="author" name="author" aria-describedby="author-help" placeholder="youremail@gmail.com">
+                <div class="m-3">
             <button type="submit" class="btn btn-primary">Envoyer</button>
+            </div>
         </form>
         <br />
     </div>

@@ -24,7 +24,11 @@
 
     <?php endif ?>
 </li>
+<li class="nav-item">
+                    <a class="nav-link" href="recipes_add.php">Ajouter recette</a>
+                </li>
             </ul>
         </div>
+       
     </div>
 </nav>

@@ -1,6 +1,10 @@
 <!--
    Si utilisateur/trice est non identifié(e), on affiche le formulaire
 -->
+<?php
+session_start();
+
+?>
 
 <?php if (!isset($_SESSION['LOGGED_USER'])) : ?>
     <form action="submit_login.php" method="POST">
