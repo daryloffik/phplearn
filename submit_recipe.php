@@ -39,7 +39,7 @@ $insertRecipe->execute([
     'recipe' => $postData['recipe'],
     'author' => $postData['author'],
     'is_enabled' => 1, // 1 = true, 0 = false
-]);
+]) or die(print_r($mysqlClient->errorInfo()));
 
 redirectToUrl('indexclassroom.php');
 

@@ -21,8 +21,13 @@
                 <form method="post" action="logout.php">
         <button type="submit" class="btn btn-primary" name="logout">Se déconnecter</button>
     </form>
-
+    <?php else: ?>
+        <form method="post" action="Signin.php">
+        <button type="submit" class="btn btn-primary" name="signin">S'inscrire</button>
+    </form>
     <?php endif ?>
+   
+
 </li>
 <li class="nav-item">
                     <a class="nav-link" href="recipes_add.php">Ajouter recette</a>

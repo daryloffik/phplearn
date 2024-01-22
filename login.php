@@ -1,10 +1,17 @@
 <!--
    Si utilisateur/trice est non identifié(e), on affiche le formulaire
 -->
+
+
 <?php
 session_start();
+require_once(__DIR__ . '/config/mysql.php');
+require_once(__DIR__ . '/databaseconnect.php');
+require_once(__DIR__ . '/variables.php');
+require_once(__DIR__ . '/functions.php');
 
 ?>
+
 
 <?php if (!isset($_SESSION['LOGGED_USER'])) : ?>
     <form action="submit_login.php" method="POST">
@@ -12,7 +19,7 @@ session_start();
         <?php if (isset($_SESSION['LOGIN_ERROR_MESSAGE'])) : ?>
             <div class="alert alert-danger" role="alert">
                 <?php echo $_SESSION['LOGIN_ERROR_MESSAGE'];
-                unset($_SESSION['LOGIN_ERROR_MESSAGE']); ?>
+                 unset($_SESSION['LOGIN_ERROR_MESSAGE']); ?>
             </div>
         <?php endif; ?>
         <div class="mb-3">
