@@ -11,6 +11,7 @@ require_once(__DIR__ . '/functions.php');
 $getData = $_GET;
 
 if (!isset($getData['id']) || !is_numeric($getData['id'])) {
+    var_dump('recipeDelete');
     echo('Il faut un identifiant de recette pour la modifier.');
     return;
 }

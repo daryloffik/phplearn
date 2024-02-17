@@ -9,6 +9,7 @@ require_once(__DIR__ . '/databaseconnect.php');
 $getData = $_GET;
 
 if (!isset($getData['id']) || !is_numeric($getData['id'])) {
+    var_dump('recipeUpdate');
     echo('Il faut un identifiant de recette pour la modifier.');
     return;
 }
