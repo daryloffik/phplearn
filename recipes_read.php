@@ -45,6 +45,17 @@ echo '<pre>';
 print_r($comments);
 echo '</pre>';
 
+$retrieveReviewStatement  = $mysqlClient->prepare('SELECT ROUND(AVG(c.review),1) as rating FROM recipes r LEFT JOIN comments c on r.recipe_id = c.recipe_id WHERE r.recipe_id = :id');
+$retrieveReviewStatement->execute([
+    'id' => (int)$getData['id'],
+]);
+$review = $retrieveReviewStatement->fetch(PDO::FETCH_ASSOC);
+
+echo '<pre>';
+print_r($review);
+echo '</pre>';
+
+
 
 ?>
 
@@ -65,7 +76,10 @@ rel="stylesheet"
 <body>
     <div class="container">
         <?php require_once(__DIR__ . '/headerclassroom.php'); ?>
-        <h1> <?php echo($recipe['title']); ?></h1>
+        <div class="row">
+        <h1 class="col-md-6"> <?php echo($recipe['title']); ?></h1>
+        <h1 class="col-md-6"> <?php echo($review['rating']); ?></h1>
+        </div>
         <div class="card">
         <div class="card-body">
             <h5 class="card-title">Informations</h5>
